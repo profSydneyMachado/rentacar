@@ -1,0 +1,64 @@
+/*
+ul li {
+	list-style-type: none;
+}
+
+ul li:nth-child(odd) {
+	float:left;
+}
+*/
+
+
+ul {
+	font-size: 0;
+}
+
+ul li {
+	box-sizing: border-box;
+	display: inline-block;
+	width: 50%;
+	height: 140px;
+	margin: 0;
+	border: 1px solid black;
+	background: #999;
+	overflow: hidden;
+  }
+
+#painel{
+	width: 100%;
+	background-color: red;
+	position: relative;
+	text-align: center;
+}
+
+.postit{
+	background-color: green;
+	width: 35%;
+	height: 200px;
+	text-align: center;
+	margin: 20;
+	padding: 15;
+}
+
+.titulo_postit{
+	font-size: xx-large;
+
+}
+
+.numero_postit{
+	position: absolute;
+	font-size: 150px;
+	font-weight: bolder;
+	margin-top: -15px;
+	margin-left: -50px;
+	text-align: center;
+
+}
+
+.texto_postit{
+	position: relative;
+	font-size: 50px;
+	font-weight: bolder;
+	text-align: center;
+
+}
