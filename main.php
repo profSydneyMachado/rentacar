@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="styles/geral.css">
+<link rel="stylesheet" href="css/geral.css">
 
 <div id="painel">
         <ul>

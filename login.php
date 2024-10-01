@@ -24,7 +24,7 @@ if($_POST['botao']==''){
 	<div align=center>
 		<form method='POST' action=''>
 			<table border='1'>
-				<th colspan=2>Exams!</th>
+				<th colspan=2>RENTACAR LOGIN</th>
 				<tr><td>Login: </td><td><input type='text' size='20' name='usuario' /></td></tr>
 				<tr><td>Senha: </td><td><input type='password' size='20' name='senha' /></td></tr>
 				<tr><td colspan='2'><center><input name='botao' type='submit' value='.::Login::.' /></center></td></tr>
