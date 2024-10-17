@@ -2,9 +2,12 @@
 Projeto da turma de ADS 2025
 =======================================================================================
 
+16 / 10 / 2024 
+========================================================================
+Acerto da estrutura do projeto para rodar com Docker. Assim, cada aluno poderá criar seu servidor em casa, sem depender de internet e provedores externos para seguir com o estudo.
 
-
-15 / 10 / 2024 ========================================================================
+15 / 10 / 2024 
+========================================================================
 O arquivo de funções (funcoes.php) tem funções básicas de controle de datas e outas funções necessárias para o andamento do projeto.
 
 A principal funcionalidade deste arquivo, é fazer a conexão da aplicação com o SGBD (o MySQL da aiven ou outro qualquer)
