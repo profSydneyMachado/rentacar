@@ -1,0 +1,49 @@
+services:
+  web:
+    image: php:8.0-apache
+    container_name: apache_php
+    volumes:
+      - ./htdocs:/var/www/html:rw,cached  # Mapeamento do diretório do site com permissões adequadas para Windows
+      - ./php_conf:/usr/local/etc/php:rw  # Opcional: configuração personalizada do PHP
+    ports:
+      - "8080:80"  # Porta do host:porta do container
+    networks:
+      - app-network
+    depends_on:
+      - db  # O Apache/PHP depende do MySQL
+
+  db:
+    image: mysql:5.7
+    container_name: mysql_db
+    volumes:
+      - ./db_data:/var/lib/mysql:rw  # Persistência dos dados do MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: senha_root  # Senha do root do MySQL
+      MYSQL_DATABASE: seu_banco  # Nome do banco de dados
+      MYSQL_USER: usuario  # Usuário padrão
+      MYSQL_PASSWORD: senha_usuario  # Senha do usuário padrão
+    ports:
+      - "3306:3306"  # Porta padrão do MySQL
+    networks:
+      - app-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: db  # Conecta ao serviço MySQL (db)
+      MYSQL_ROOT_PASSWORD: senha_root  # Senha do root do MySQL
+    ports:
+      - "8081:80"  # Expor o phpMyAdmin na porta 8081
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db_data:
+  php_conf:

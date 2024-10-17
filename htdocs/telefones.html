@@ -1,0 +1,41 @@
+<form action="" method="post">
+	<table border="0">
+		<tbody name="tabela" id="tabela">
+			<tr>
+				<td>
+					Insira os telefones
+				</td>
+				<td>
+					<i class="fa-regular fa-circle-plus"></i>
+					<img src="img/mais.png" alt="Adicionar 1 linha" title="Adicionar 1 linha" width="20" onclick="adicionar()">
+				</td>
+			</tr>
+			<tr id="linha_1">
+				<td>
+					<input type="text" name="telefone_00" id="telefone_00" value="" onblur="atualiza(this);">
+				</td>
+				<td>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<input type="submit" value="Enviar!">
+</form>
+
+<script>
+	function atualiza(obj){
+		obj.setAttribute('value', obj.value);
+	}
+	
+	function adicionar(){
+		rnd=Math.floor((Math.random()*1000000));
+		texto='<tr id="linha_'+rnd+'"><td><input type="text" name="telefone_'+rnd+'" id="telefone_'+rnd+'" value="" onblur="atualiza(this);"></td><td><img src="img/menos.png" alt="Deletar esta linha" title="Deletar esta linha" width="20" onclick="deletar('+rnd+')"></td></tr>';
+		document.getElementById("tabela").innerHTML+=texto;
+	}
+
+	function deletar(linha){
+		sujeito_a_ser_apagado=document.getElementById("linha_"+linha);
+		sujeito_a_ser_apagado.parentNode.removeChild(sujeito_a_ser_apagado);
+	}
+</script>
